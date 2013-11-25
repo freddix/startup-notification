@@ -1,7 +1,7 @@
 Summary:	Startup Notification Library
 Name:		startup-notification
 Version:	0.12
-Release:	3
+Release:	4
 Group:		Libraries
 License:	LGPL
 Source0:	http://freedesktop.org/software/startup-notification/releases/%{name}-%{version}.tar.gz
@@ -24,6 +24,8 @@ feedback and other features.
 Summary:	Startup Notification Library development files
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	libxcb-devel
+Requires:	xcb-util-devel
 
 %description devel
 Startup Notification Library development files.
@@ -62,7 +64,6 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/*.so
-%{_libdir}/*.la
 %{_includedir}/*
 %{_pkgconfigdir}/*.pc
 
